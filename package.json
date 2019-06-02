@@ -2,10 +2,13 @@
   "name": "node-red-contrib-zlsunode",
   "version": "0.0.1",
   "description": "Generated with Eclipse npm Tools",
-  "main": "zlsunode.js",
+  "main": "nodezlsu",
   "scripts": {
-    "test": "echo 'Error: no test specified' && exit 1",
-    "zlsunode": "node-red-contrib-zlsunode/zlsunode.js"
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zl2su/node-red-contrib-zlsunode.git"
   },
   "author": "",
   "license": "MIT",
