@@ -1,0 +1,68 @@
+<!--   <!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
+-->
+
+<!-- Define the edit dialog.  -->
+<script type="text/x-red" data-template-name="zlsunode">
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-dht"><i class="fa fa-list"></i> Sensor model</label>
+        <select id="node-input-dht">
+           <option value="11">DHT11</option>
+             </select>
+    </div>
+    <br/>
+ <!-- Node name -->
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="zlsunode">
+   <p>dht11 LED is on when the temperature is above 25 by sensing the sensor.</p>
+<p>dht11 sensor data should be connected to <b>gpio4</b>, led should be connected to<b> gpio26.</b></p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('zlsunode', {
+        category: 'test', // the palette category
+        defaults: {               // defines the editable properties of the node
+            name:    {value: ""},
+            topic:   {value: "dht22"},
+            dht:     {value: 11}        },
+        inputs:  1,              // set the number of inputs - only 0 or 1
+        outputs: 1,              // set the number of outputs - 0 to n
+        color:   "#244E66",
+        icon:    "myicon.png",   // saved in  icons/myicon.png
+        label:   function() {    // sets the default label contents
+                   return this.name||"zlsunode";
+                 },
+        labelStyle: function() { // sets the class to apply to the label
+                   return this.name ? "node_label_italic": "";
+                 }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
