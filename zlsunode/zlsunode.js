@@ -5,11 +5,13 @@ module.exports=function(RED){
 
  	//dependency-dht sensor package
  	var sensorLib=require("node-dht-sensor");
-	var sensorType=11;
+ 	var sensorType=11;
 	var sensorPin=4;
-	var GPIO=require("onoff").Gpio;
+ 	var GPIO=require("onoff").Gpio;
 	var LED=new GPIO(23,'out');
 	var LED_state=0;
+	
+	
 
 	function zlsunode(config){
 	//init 
@@ -17,7 +19,7 @@ module.exports=function(RED){
 	
 	var node = this;
 	this.topic=config.topic;
-	this.dht=config.dht;
+	//this.dht=config.dht;
 
 	//read the data from the sensors
 	this.read=function(msgIn){
@@ -25,9 +27,8 @@ module.exports=function(RED){
 	var reading  = { temperature : 100.0, humidity : 110.0 };
 	LED_state=LED.readSync();  
 	
-		
-	msg.payload=reading.temperature.toFixed(2);
-	msg.humidity = reading.humidity.toFixed(2);
+	msg.payload=reading.temperature.toFixed(1);
+	msg.humidity = reading.humidity.toFixed(1);
     msg.isValid  = reading.isValid;
     msg.errors   = reading.errors;
     msg.topic    = node.topic || node.name;
