@@ -7,6 +7,8 @@ module.exports=function(RED){
  	var sensorLib=require("node-dht-sensor");
 	var GPIO=require("onoff").Gpio;
 	var LED=new GPIO(23,'out');
+	var sensorType=11;
+	var sensorPin=4;
 	var LED_state=0;
 
 	function zlsunode(config){
