@@ -19,7 +19,7 @@ module.exports=function(RED){
 	
 	var node = this;
 	this.topic=config.topic;
-	//this.dht=config.dht;
+	this.dht=config.dht;
 
 	//read the data from the sensors
 	this.read=function(msgIn){
@@ -29,14 +29,14 @@ module.exports=function(RED){
 	
 	msg.payload=reading.temperature.toFixed(1);
 	msg.humidity = reading.humidity.toFixed(1);
-    msg.isValid  = reading.isValid;
-    msg.errors   = reading.errors;
-    msg.topic    = node.topic || node.name;
+        msg.isValid  = reading.isValid;
+        msg.errors   = reading.errors;
+        msg.topic    = node.topic || node.name;
             
-     if( msg.payload > 20) LED_state=1;
-       else LED_state=0;
+        if( msg.payload > 20) LED_state=1;
+          else LED_state=0;
 	 
-     return msg; 
+        return msg; 
 	};
 
 	// respond to inputs....
