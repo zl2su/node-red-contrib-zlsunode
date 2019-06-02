@@ -1,5 +1,5 @@
 {
-  "name": "node-red-contrib-zlsunode",
+  "name": "red-node-contrib-zlsunode",
   "version": "0.0.1",
   "description": "Generated with Eclipse npm Tools",
   "main": "nodezlsu",
@@ -8,11 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zl2su/node-red-contrib-zlsunode.git"
+    "url": "git+https://github.com/zl2su/node-red-contrib-zlsunode.git"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/zl2su/node-red-contrib-zlsunode/issues"
+  },
+  "homepage": "https://github.com/zl2su/node-red-contrib-zlsunode#readme",
+  "devDependencies": {},
+  "keywords": [
+    "red-node"
+  ]
 }
