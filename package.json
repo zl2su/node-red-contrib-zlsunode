@@ -14,13 +14,5 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
-  },
-  "bugs": {
-    "url": "https://github.com/zl2su/node-red-contrib-zlsunode/issues"
-  },
-  "homepage": "https://github.com/zl2su/node-red-contrib-zlsunode#readme",
-  "devDependencies": {},
-  "keywords": [
-    "red-node"
-  ]
+  }
 }
