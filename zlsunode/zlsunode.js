@@ -5,7 +5,7 @@ module.exports=function(RED){
 
  	//dependency-dht sensor package
  	var sensorLib=require("node-dht-sensor");
- 	var sensorType=11;
+ 	//var sensorType=11;
 	var sensorPin=4;
  	var GPIO=require("onoff").Gpio;
 	var LED=new GPIO(23,'out');
@@ -20,11 +20,12 @@ module.exports=function(RED){
 	var node = this;
 	this.topic=config.topic;
 	this.dht=config.dht;
-
+	this.pin=config.pin;
 	//read the data from the sensors
 	this.read=function(msgIn){
 	var msg = msgIn ? msgIn : {};
 	var reading  = { temperature : 100.0, humidity : 110.0 };
+		reading=sensorLib.read(this.dht,this.pin);
 	LED_state=LED.readSync();  
 	
 	msg.payload=reading.temperature.toFixed(1);
